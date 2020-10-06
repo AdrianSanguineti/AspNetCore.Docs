@@ -329,6 +329,7 @@ If you're running into errors, the following tips may help:
 * In the **Debugger** tab, open the developer tools in your browser. In the console, execute `localStorage.clear()` to remove any breakpoints.
 * Confirm that you've installed and trusted the ASP.NET Core HTTPS development certificate. For more information, see <xref:security/enforcing-ssl#troubleshoot-certificate-problems>.
 * Visual Studio requires the **Enable JavaScript debugging for ASP.NET (Chrome, Edge and IE)** option in **Tools** > **Options** > **Debugging** > **General**. This is the default setting for Visual Studio. If debugging isn't working, confirm that the option is selected.
+* If your environment uses a HTTP proxy, make sure that `localhost` has been included in the proxy bypass settings. This can be done by setting the `NO_PROXY` environment variable in either the `launchSettings.json` file for the project, or at the User/System Environment Variables level for it to apply to all applications (requires a restart of Visual Studio for change to take effect).
 
 ### Breakpoints in `OnInitialized{Async}` not hit
 
